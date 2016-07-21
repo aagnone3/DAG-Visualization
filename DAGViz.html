@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>DAG Visualization</title>
+
+    <link rel="stylesheet" type="text/css" href="res/css/mainStyle.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/d3-context-menu.css" />
+    <link rel="stylesheet" type="text/css" href="res/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="res/css/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="res/css/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" type="text/css" href="res/css/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+
+    <script type="text/javascript" src="res/js/d3.js"></script>
+    <script type="text/javascript" src="res/js/d3_tip.js"></script>
+    <script type="text/javascript" src="res/js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="res/js/d3-context-menu.js"></script>
+    <script type="text/javascript" src="res/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="res/js/vue.js"></script>
+    <script type="text/javascript" src="res/js/underscore-min.js"></script>
+    <script type="text/javascript" src="res/js/DAGParser.js"></script>
+    <!-- item template -->
+    <script type="text/x-template" id="item-template">
+        <li>
+            <div class="treeViewItem"
+                 v-on="click: treeViewNodeSelected, dblclick: treeViewNodeSelected">
+                {{model.name}}
+                <span v-if="isFolder">[{{open ? '-' : '+'}}]</span>
+            </div>
+            <ul v-show="open" v-if="isFolder">
+                <item class="treeViewItem"
+                      v-repeat="model: model.allChildren">
+                </item>
+                <!--<li v-on="click: addChild">+</li>-->
+            </ul>
+        </li>
+    </script>
+</head>
+
+<body>
+    <div class="heading">
+        <ul id="headingList">
+            <li>
+                <div id="headingPinDiv">
+                    <button type="button" id="headingPinButton" class="btn btn-success ui-btn-inline">
+                        <span class="glyphicon glyphicon-pushpin"></span>
+                    </button>
+                </div>
+            </li>
+            <li style="width:95%">
+                <div id="titleDiv">
+                    <h2 id="headingText">Directed Acyclic Graph Visualization</h2>
+                </div>
+            </li>
+        </ul>
+        <div id="fileInputListItem" style="margin-left: auto; margin-right: auto;">
+            <input id="file_input" type="file" style="margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+    <div class="headingIndicatorMessage"></div>
+
+    <div id="generalTabs">
+        <button type="button" id="leftTabPanelPinButton" class="btn btn-success" onclick="leftTabPanelPinClick()">
+            <span class="glyphicon glyphicon-pushpin"></span>
+        </button>
+        <ul>
+            <li><a href="#nodeLocateTab">Locate Element</a></li>
+            <li><a href="#nodeInfoTab">Element Info</a></li>
+            <li><a href="#helpTab">Help</a></li>
+        </ul>
+        <div id="nodeLocateTab" class="tab">
+            <div id="nodeLocateAccordion">
+                <div class="nodeLocateAccordionGroup">
+                    <h3>Search by Keyword</h3>
+                    <div class="search">
+                        <label for="searchInput" id="searchInputLabel">Search for </label>
+                        <input type="text" id="searchInput" placeholder="RegEx or Regular" />
+                    </div>
+                </div>
+
+                <div class="nodeLocateAccordionGroup">
+                    <h3>Search by Mapping</h3>
+                    <div id="searchByMapping"></div>
+                </div>
+
+                <div class="nodeLocateAccordionGroup">
+                    <h3>Search by Group</h3>
+                    <div id="searchByGroup"></div>
+                </div>
+
+                <div class="nodeLocateAccordionGroup">
+                    <h3>Filter View by Group</h3>
+                    <div>
+                        <label for="groupSelect">Group  </label>
+                        <select id="groupSelect" name="groupSelect"></select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="nodeInfoTab" class="tab">
+            <h2 class="nameHeader"></h2>
+            <h2 id="defaultNodeInfoMessage">Click on an element to see its information here!</h2>
+            <div class="d3-node-info"></div>
+            <div id="info"></div>
+        </div>
+        <div id="helpTab" class="tab">
+            <h2 class="nameHeader"></h2>
+            <div id="elementGroupLegendDiv"></div>
+            <div id="sensorTypeLegendDiv"></div>
+        </div>
+    </div>
+    
+    <div id="layoutTabs">
+        <ul>
+            <li><a href="#forceLayoutView">Redundant Graph View</a></li>
+            <li><a href="#treeLayoutView">Tree View</a></li>
+            <!--<li><a href="#uniqueForceLayoutView">Pure Graph View</a></li>-->
+        </ul>
+        <div id="forceLayoutView"></div>
+        <div id="treeLayoutView"></div>
+        <!--<div id="uniqueForceLayoutView"></div>-->
+    </div>
+    <div class="nodeInfoIndicatorMessage"></div>
+    <div id="configuration"></div>
+    <p id="JSONText"></p>
+</body>
+</html>

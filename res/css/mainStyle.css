@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 14pt sans;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    overflow: scroll;
+}
+
+.centeredText {
+    text-align: center;
+}
+
+.centeredElement {
+    margin: auto;
+}
+
+.showLeftTabPanelMessage {
+    position: fixed;
+    width: 100%;
+    -webkit-transform: rotate(90deg) translate(100%,0%);
+    transform: rotate(90deg) translate(100%,0%);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    padding-left: 100px;
+    background-color: #000000;
+    color: white;
+    z-index: 1000;
+}
+
+#showLeftTabPanelMessage {
+    font-weight: bold;
+}
+
+.heading {
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+#headingList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#headingPinButton {
+    top: 0;
+    left: 0;
+}
+
+#titleDiv {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading li {
+    float: left;
+}
+
+#headingText {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.tabTitle {
+
+    color: rgb(247, 154, 46);
+}
+
+.nodeLocateAccordion {
+    width: 100%;
+}
+
+.nodeLocateAccordionGroup {
+    zoom: 1;
+}
+
+#treeViewByMapping, #treeViewByGroupType {
+    font-weight: bold;
+    color: rgb(247, 154, 46);
+}
+
+.treeViewList {
+    color: white;
+    text-align: left;
+}
+
+.treeViewItem {
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1.5em;
+    list-style-type: dot;
+}
+
+#searchInput {
+    color: black;
+}
+
+.propertiesTable {
+    border: 2px solid greenyellow;
+    border-collapse: collapse;
+    border-radius: 14px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legendTable {
+    background-color: #E0E0E0;
+    color: black;
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-radius: 14px;
+    width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sensorTypeLegendDiv {
+    padding-top: 50px;
+}
+
+.propertiesTable th,  .propertiesTable td {
+    border: 2px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 12px;
+}
+
+.legendTable th,  .legendTable td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 12px;
+}
+
+.propertiesTable th,  .propertiesTable td {
+    padding: 10px;
+}
+
+.code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.nodeInfoTitle {
+    color: rgb(247, 154, 46);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.headingIndicatorMessage {
+    border-top: none;
+    border-bottom: none;
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+html .ui-autocomplete {
+    height: 100px;
+}
+
+#headingIndicatorMessage {
+    text-align  : center;
+    font-family : "Trebuchet MS", Helvetica, sans-serif;
+    font-weight : bold;
+}
+
+.node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1px;
+}
+
+.node text {
+  font-size: 11px;
+}
+
+.path {
+    cursor: pointer;
+    stroke: #000;
+    stroke-width: 1px;
+}
+
+line.link {
+    fill: none;
+    stroke: #9ecae1;
+    stroke-width: 1px;
+}
+
+path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+}
+
+#chart, #header {
+  top: 0;
+}
+
+#header, #footer {
+  z-index: 1;
+  display: block;
+  font-size: 36px;
+  font-weight: 300;
+  text-shadow: 0 1px 0 #fff;
+}
+
+#header.inverted, #footer.inverted {
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+}
+
+#header {
+  top: 80px;
+  left: 140px;
+  width: 1000px;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+line {
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.body {
+  height: 2000px;
+}
+
+.string, .regexp {
+  color: #f39;
+}
+
+.keyword {
+  color: #00c;
+}
+
+.comment {
+  color: #777;
+  font-style: oblique;
+}
+
+.number {
+  color: #369;
+}
+
+.class, .special {
+  color: #1181B8;
+}
+
+a:link, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+.node {
+  font: 10px sans-serif
+}
+
+.node rect {
+  cursor: move;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  text-shadow: 1px 1px 2px #fff;
+  font-size: 8px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+#tooltip {
+    position: absolute;
+    pointer-events: none;
+    font-size: 0.7em;
+    font-family: sans-serif;
+    padding: 3px;
+    width: auto;
+    height: auto;
+    background-color: #F2F2F2;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px #4C4C4C;
+}
+
+.value {
+  white-space: pre-line;
+  margin: 0;
+}
+
+#generalTabs {
+    width: 30%;
+    float: left;
+    height: 90%;
+    min-height: 90%;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+#layoutTabs {
+    left: 30%;
+    width: 70%;
+    overflow-y: scroll;
+}
+
+#forceLayoutView, #treeLayoutView, #uniqueForceLayoutView {
+    background-color: #E0E0E0;
+    width: 100%;
+    border: 2px solid orange;
+}
+
+#groupSelect {
+    background-color: #E0E0E0;
+    color: black;
+}
+
+.d3-node-info .text {
+    font-size: 20px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.bar {
+    fill: orange;
+}
+
+.bar:hover {
+    fill: orangered;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.d3-tip {
+    font-weight: normal;
+    padding: 10px;
+    background: rgba(100, 100, 100, 0.8);
+    color: #fff;
+}
