@@ -1,11 +1,12 @@
-# D3 DAG Visualization
+# DAG Visualization with JavaScript and D3
 
 An interactive dashboard for visualizing various aspects of a directed acyclic graph. Features include, but are not limited to, the following:
 
 - Regex search with auto-complete
 - Filter by element type
 - Filter by element depth
-- Single-path focus view'
+- Single-path focus view
+
 ---
 # Visualization Screenshot
 ![Visualization Screenshot]
