@@ -17,10 +17,12 @@ An interactive dashboard for visualizing various aspects of a directed acyclic g
 
 Nothing simplifies the complexity of a tree/graph data structure like visualization. Extract interesting and useful insights faster than poring through lines of text.
 
-# Installation
+# Installation / Just Let Me Play With It
 
 Clone and run! This is a lightweight repository that does not need any formal installation.
 Note that only the Chrome browser has been tested.
+
+Alternatively, play with it. It's hosted [here](http://anthonyagnone.com/dag_viz/DAGViz.html).
 
 ## Contributors
 
